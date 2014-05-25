@@ -36,5 +36,10 @@ public class WordCountBolt extends BaseRichBolt {
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
 		declarer.declare(new Fields("word", "count"));
 	}
+	
+	@Override
+	public void cleanup() {
+		System.out.println(_counts);
+	}
 
 }
